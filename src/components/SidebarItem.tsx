@@ -73,24 +73,24 @@ const SidebarItem = (
                     {accordionList &&  
                         <List>
                             {accordionList.map((text, index) => (
-                            <Link href={to}>
-                                <ListItem 
-                                    button 
-                                    key={text} 
-                                    sx={ 
-                                        isActive
-                                    ? {
-                                        backgroundColor: 'rgba(0, 0, 0, 0.04)', // Add your hover styles here
-                                    }
-                                    : {}}
-                                >
-                                
-                                    {open && <ListItemText primary={text} />} {/* This will only render the text when the sidebar is open */}
-                                </ListItem>
-                            </Link>
+                                <Link href={to} key={index}>
+                                    <ListItem 
+                                        button 
+                                        sx={ 
+                                            isActive
+                                                ? {
+                                                    backgroundColor: 'rgba(0, 0, 0, 0.04)', // Add your hover styles here
+                                                }
+                                                : {}
+                                        }
+                                    >
+                                        {open && <ListItemText primary={text} />} {/* This will only render the text when the sidebar is open */}
+                                    </ListItem>
+                                </Link>
                             ))}
                         </List> 
                     }
+
             
                 </AccordionDetails>
             </Accordion>

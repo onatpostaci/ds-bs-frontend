@@ -180,91 +180,99 @@ const Dashboard = () => {
     fetchRSI();
   }, []);
 
-  const charts = 
-  [
-
+  const charts = [
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[1]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[1]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[2]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[2]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[3]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[3]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[4]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[4]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[5]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[5]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[7]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[7]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[8]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[8]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[9]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[9]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
     },
     {
-      node: 
-      <Box
-      flexGrow={1} // Make sure it's allowed to grow
-      height={'80%'}
-      >
-        <ChartComponent series={dsSeries[10]} chartOptions={optionsBar} height={90} type='bar' />
-      </Box>
-    }
-  ]
+      node: (
+        <Box
+          flexGrow={1}
+          height={'80%'}
+        >
+          <ChartComponent series={dsSeries[10]} chartOptions={optionsBar} height={90} type='bar' />
+        </Box>
+      ),
+    },
+  ];
+  
 
   return (
     <Box  m="20px" height="auto">
@@ -346,7 +354,13 @@ const Dashboard = () => {
                     <Image src={'/xrp-logo-removebg.png'} alt="call-image" width={20} height={20}/>
                   </IconButton>
               </Box>
-              <TabsPanel children={charts} />
+              <TabsPanel>
+                {charts.map((chart, index) => (
+                  { node: <div key={index} style={{height:'100%'}}>{chart.node}</div> }
+                ))}
+              </TabsPanel>
+
+
               
             </Box>
             {/* ROW 3 */}

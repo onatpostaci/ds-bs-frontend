@@ -72,7 +72,7 @@ export default function TabsPanel( {children} : TabPanelContentProps ) {
         <Tab label="Taker Buy Quote Asset Volume" />
       </Tabs>
       {children?.map((child, index)=>(
-          <CustomTabPanel value={value} index={index}>
+          <CustomTabPanel value={value} index={index} key={index}>
               {child.node}
           </CustomTabPanel>
       ))}
