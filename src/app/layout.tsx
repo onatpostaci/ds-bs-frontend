@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Box, Stack } from '@mui/material'
 import { Sidebar, DashboardTopbar } from '@/components'
+import LoginPage from '@/components/LoginPage'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,13 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Stack direction={'row'}>
-          <Sidebar/>
-            <Box sx={{display: "flex", flexDirection:"column", gap:"4rem", width:"100%", height:"auto"}}>
-              <DashboardTopbar />
-              {children}
-            </Box>   
-        </Stack>
+            {children}
         </body>
     </html>
   )
