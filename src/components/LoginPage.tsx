@@ -38,9 +38,10 @@ const LoginPage: React.FC = () => {
       className="min-h-screen flex items-center justify-center"
     >
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h1 className="text-3xl font-semibold mb-4" style={{ color: '#ef4444' }}>Login</h1>
+        
         <form className="flex flex-col items-center" onSubmit={handleLogin}>
           <div className="mb-4 w-full">
+            <h1 className="text-3xl font-semibold mb-4" style={{ color: '#ef4444' }}>Login</h1>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input
               id="email"
